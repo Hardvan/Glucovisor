@@ -13,7 +13,73 @@
   </head>
 
   <body>
-    <h1 class="title">Hello, World!</h1>
+    <h1 class="title">Glucovisor</h1>
+
+    <!-- Input form to accept diabetes data -->
+    <div class="input-form">
+      <form action="{{ url_for('predict') }}" method="POST">
+        <!-- Pregnancies -->
+        <label for="pregnancies">Pregnancies</label>
+        <input
+          type="number"
+          name="pregnancies"
+          id="pregnancies"
+          value="5"
+          required
+        />
+
+        <!-- Glucose -->
+        <label for="glucose">Glucose</label>
+        <input type="number" name="glucose" id="glucose" value="166" required />
+
+        <!-- Blood Pressure -->
+        <label for="blood-pressure">Blood Pressure</label>
+        <input
+          type="number"
+          name="blood-pressure"
+          id="blood-pressure"
+          value="72"
+          required
+        />
+
+        <!-- Skin Thickness -->
+        <label for="skin-thickness">Skin Thickness</label>
+        <input
+          type="number"
+          name="skin-thickness"
+          id="skin-thickness"
+          value="19"
+          required
+        />
+
+        <!-- Insulin -->
+        <label for="insulin">Insulin</label>
+        <input type="number" name="insulin" id="insulin" value="175" required />
+
+        <!-- BMI -->
+        <label for="bmi">BMI</label>
+        <input type="number" name="bmi" id="bmi" value="25.8" required />
+
+        <!-- Diabetes Pedigree Function -->
+        <label for="diabetes-pedigree-function"
+          >Diabetes Pedigree Function</label
+        >
+        <input
+          type="number"
+          name="diabetes-pedigree-function"
+          id="diabetes-pedigree-function"
+          value="0.587"
+          required
+        />
+
+        <!-- Age -->
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" value="51" required />
+
+        <!-- Submit Button -->
+        <input type="submit" value="Predict" />
+      </form>
+    </div>
 
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>

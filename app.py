@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from diabetes import getPrediction
 
 app = Flask(__name__)
 
@@ -23,7 +24,12 @@ def predict():
 
     print(f"\033[94mData\033[0m: {data}")  # For debugging
 
-    return render_template("index.html")
+    # Get the result from the model
+    result = {
+        "prediction": getPrediction(data)
+    }
+
+    return render_template("index.html", result=result)
 
 
 if __name__ == "__main__":

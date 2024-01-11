@@ -81,6 +81,18 @@
       </form>
     </div>
 
+    <!-- Result -->
+    {% if result %}
+    <div class="result">
+      <h2 class="result-title">Result</h2>
+      {% if result.prediction == 1 %}
+      <p class="result-text">You have diabetes.</p>
+      {% else %}
+      <p class="result-text">You don't have diabetes.</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
   </body>

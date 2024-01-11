@@ -2,6 +2,8 @@ import numpy as np
 import joblib
 
 data_cache = {}
+scaler = joblib.load("./static/model/diabetes-prediction-scaler.joblib")
+model = joblib.load("./static/model/diabetes-prediction-model.joblib")
 
 
 def getPrediction(data):
@@ -34,12 +36,10 @@ def getPrediction(data):
     input_data_reshaped = np.asarray(input_data).reshape(1, -1)
 
     # Load scaler & transform data
-    scaler = joblib.load("./static/model/diabetes-prediction-scaler.joblib")
     std_data = scaler.transform(input_data_reshaped)
     print(f"std_data: {std_data}")
 
     # Load model & predict
-    model = joblib.load("./static/model/diabetes-prediction-model.joblib")
     prediction = model.predict(std_data)
     print(f"\033[94mPredction\033[0m: {prediction}")  # For debugging
 
@@ -106,5 +106,6 @@ if __name__ == "__main__":
     end = time.time()
     time_taken = round(end - start, 2) * 1000
     print(f"\033[94mTime taken\033[0m: {time_taken} ms")
+    print()
 
     print(f"\033[94mData cache\033[0m: {data_cache}")

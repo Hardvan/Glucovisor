@@ -1,6 +1,8 @@
 import numpy as np
 import joblib
 
+data_cache = {}
+
 
 def getPrediction(data):
     """Get the prediction from the SVM model.
@@ -22,7 +24,11 @@ def getPrediction(data):
     """
 
     # Get the values in a list
-    input_data = [data[x] for x in data]
+    input_data = tuple([data[x] for x in data])
+
+    # Check if the data is in the cache
+    if input_data in data_cache:
+        return data_cache[input_data]
 
     # convert to numpy array & reshape
     input_data_reshaped = np.asarray(input_data).reshape(1, -1)
@@ -37,10 +43,15 @@ def getPrediction(data):
     prediction = model.predict(std_data)
     print(f"\033[94mPredction\033[0m: {prediction}")  # For debugging
 
+    # Add to cache
+    data_cache[input_data] = prediction[0]
+
     return prediction[0]
 
 
 if __name__ == "__main__":
+
+    import time
 
     data = {
         "pregnancies": 5,
@@ -54,4 +65,46 @@ if __name__ == "__main__":
     }
 
     print(f"\033[94mData\033[0m: {data}")  # For debugging
-    print(f"\033[94mPrediction\033[0m: {getPrediction(data)}")  # For debugging
+
+    # Test cache
+    start = time.time()
+    print(f"\033[94mPrediction\033[0m: {getPrediction(data)}")
+    end = time.time()
+    time_taken = round(end - start, 2) * 1000
+    print(f"\033[94mTime taken\033[0m: {time_taken} ms")
+    print()
+
+    # Same data again
+    start = time.time()
+    print(f"\033[94mPrediction\033[0m: {getPrediction(data)}")
+    end = time.time()
+    time_taken = round(end - start, 2) * 1000
+    print(f"\033[94mTime taken\033[0m: {time_taken} ms")
+
+    # Different input
+    data = {
+        "pregnancies": 1,
+        "glucose": 85,
+        "blood-pressure": 66,
+        "skin-thickness": 29,
+        "insulin": 0,
+        "bmi": 26.6,
+        "diabetes-pedigree-function": 0.351,
+        "age": 31
+    }
+
+    start = time.time()
+    print(f"\033[94mPrediction\033[0m: {getPrediction(data)}")
+    end = time.time()
+    time_taken = round(end - start, 2) * 1000
+    print(f"\033[94mTime taken\033[0m: {time_taken} ms")
+    print()
+
+    # Same data again
+    start = time.time()
+    print(f"\033[94mPrediction\033[0m: {getPrediction(data)}")
+    end = time.time()
+    time_taken = round(end - start, 2) * 1000
+    print(f"\033[94mTime taken\033[0m: {time_taken} ms")
+
+    print(f"\033[94mData cache\033[0m: {data_cache}")

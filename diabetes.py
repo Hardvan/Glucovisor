@@ -1,5 +1,12 @@
 import numpy as np
 import joblib
+import warnings
+from sklearn.exceptions import InconsistentVersionWarning
+
+# Suppress scikit-learn warnings
+warnings.filterwarnings("ignore", category=InconsistentVersionWarning)
+warnings.filterwarnings("ignore", category=UserWarning)
+
 
 data_cache = {}
 scaler = joblib.load("./static/model/diabetes-prediction-scaler.joblib")
@@ -37,7 +44,7 @@ def getPrediction(data):
 
     # Transform data using scaler
     std_data = scaler.transform(input_data_reshaped)
-    print(f"std_data: {std_data}")
+    # print(f"std_data: {std_data}")
 
     # Get prediction from model
     prediction = model.predict(std_data)
@@ -64,7 +71,7 @@ if __name__ == "__main__":
         "age": 51
     }
 
-    print(f"\033[94mData\033[0m: {data}")  # For debugging
+    # print(f"\033[94mData\033[0m: {data}")  # For debugging
 
     # Test cache
     start = time.time()

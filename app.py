@@ -26,7 +26,8 @@ def predict():
 
     # Get the result from the model
     result = {
-        "prediction": getPrediction(data)
+        "prediction": getPrediction(data),
+        "data": data
     }
 
     return render_template("index.html", result=result)

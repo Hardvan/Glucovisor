@@ -19,65 +19,101 @@
     <div class="input-form">
       <form action="{{ url_for('predict') }}" method="POST">
         <!-- Pregnancies -->
-        <label for="pregnancies">Pregnancies</label>
-        <input
-          type="number"
-          name="pregnancies"
-          id="pregnancies"
-          value="5"
-          required
-        />
+        <div class="user-box">
+          <input
+            type="number"
+            name="pregnancies"
+            id="pregnancies"
+            value="5"
+            required
+          />
+          <label for="pregnancies">Pregnancies</label>
+        </div>
 
         <!-- Glucose -->
-        <label for="glucose">Glucose</label>
-        <input type="number" name="glucose" id="glucose" value="166" required />
+        <div class="user-box">
+          <input
+            type="number"
+            name="glucose"
+            id="glucose"
+            value="166"
+            required
+          />
+          <label for="glucose">Glucose</label>
+        </div>
 
         <!-- Blood Pressure -->
-        <label for="blood-pressure">Blood Pressure</label>
-        <input
-          type="number"
-          name="blood-pressure"
-          id="blood-pressure"
-          value="72"
-          required
-        />
+        <div class="user-box">
+          <input
+            type="number"
+            name="blood-pressure"
+            id="blood-pressure"
+            value="72"
+            required
+          />
+          <label for="blood-pressure">Blood Pressure</label>
+        </div>
 
         <!-- Skin Thickness -->
-        <label for="skin-thickness">Skin Thickness</label>
-        <input
-          type="number"
-          name="skin-thickness"
-          id="skin-thickness"
-          value="19"
-          required
-        />
+        <div class="user-box">
+          <input
+            type="number"
+            name="skin-thickness"
+            id="skin-thickness"
+            value="19"
+            required
+          />
+          <label for="skin-thickness">Skin Thickness</label>
+        </div>
 
         <!-- Insulin -->
-        <label for="insulin">Insulin</label>
-        <input type="number" name="insulin" id="insulin" value="175" required />
+        <div class="user-box">
+          <input
+            type="number"
+            name="insulin"
+            id="insulin"
+            value="175"
+            required
+          />
+          <label for="insulin">Insulin</label>
+        </div>
 
         <!-- BMI -->
-        <label for="bmi">BMI</label>
-        <input type="number" name="bmi" id="bmi" value="25.8" required />
+        <div class="user-box">
+          <input type="number" name="bmi" id="bmi" value="25.8" required />
+          <label for="bmi">BMI</label>
+        </div>
 
         <!-- Diabetes Pedigree Function -->
-        <label for="diabetes-pedigree-function"
-          >Diabetes Pedigree Function</label
-        >
-        <input
-          type="number"
-          name="diabetes-pedigree-function"
-          id="diabetes-pedigree-function"
-          value="0.587"
-          required
-        />
+        <div class="user-box">
+          <input
+            type="number"
+            name="diabetes-pedigree-function"
+            id="diabetes-pedigree-function"
+            value="0.587"
+            required
+          />
+          <label for="diabetes-pedigree-function"
+            >Diabetes Pedigree Function</label
+          >
+        </div>
 
         <!-- Age -->
-        <label for="age">Age</label>
-        <input type="number" name="age" id="age" value="51" required />
+        <div class="user-box">
+          <input type="number" name="age" id="age" value="51" required />
+          <label for="age">Age</label>
+        </div>
+
+        <!-- New Submit Button -->
+        <center>
+          <a href="#">
+            SEND
+            <span></span>
+          </a>
+        </center>
 
         <!-- Submit Button -->
-        <input type="submit" value="Predict" />
+        <input type="submit" value="Predict" class="submit-button" />
       </form>
     </div>
 

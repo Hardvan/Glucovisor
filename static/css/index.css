@@ -3,6 +3,14 @@ html {
   margin: 0;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+  background: #000000;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
 .title {
   font-size: 2rem;
   font-weight: 700;
@@ -115,6 +123,12 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 70%;
+  margin: 50px auto;
+  background: rgba(24, 20, 20, 0.987);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
 }
 
 .result-title {
@@ -123,12 +137,19 @@ html {
   margin-bottom: 1rem;
 }
 
+.result-text {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
 .result-table {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  color: #fff;
 }
 
 .result-table-title {

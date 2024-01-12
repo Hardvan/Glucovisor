@@ -9,6 +9,7 @@ Glucovisor is a Flask web application designed for predicting diabetes based on 
 ## Tech Stack
 
 - **Flask**: A lightweight web framework for building web applications in Python.
+- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom user interfaces.
 - **Plotly**: A library for creating interactive and dynamic visualizations.
 - **Joblib**: Used for saving and loading machine learning models.
 - **scikit-learn**: A machine learning library for building and evaluating models.

@@ -49,6 +49,13 @@ body {
   border-radius: 10px;
 }
 
+.input-form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 30px;
+  text-align: center;
+}
+
 .input-form .user-box {
   position: relative;
 }

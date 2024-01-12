@@ -17,7 +17,7 @@
 
     <!-- Input form to accept diabetes data -->
     <div class="input-form">
-      <form action="{{ url_for('predict') }}" method="POST">
+      <form id="myForm" action="{{ url_for('predict') }}" method="POST">
         <!-- Pregnancies -->
         <div class="user-box">
           <input
@@ -106,14 +106,11 @@
 
         <!-- New Submit Button -->
         <center>
-          <a href="#">
-            SEND
+          <a href="#" onclick="submitForm()">
+            PREDICT
             <span></span>
           </a>
         </center>
-
-        <!-- Submit Button -->
-        <input type="submit" value="Predict" class="submit-button" />
       </form>
     </div>
 
@@ -191,6 +188,11 @@
     {% endif %}
 
     <!-- Custom JS -->
+    <script>
+      function submitForm() {
+        document.getElementById("myForm").submit();
+      }
+    </script>
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
   </body>
 </html>

@@ -28,10 +28,10 @@ body {
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
   text-align: center;
+  color: #fff;
 }
 
 /* Input Form */
@@ -42,7 +42,7 @@ body {
   justify-content: center;
   gap: 1rem;
   max-width: 70%;
-  margin: 100px auto;
+  margin: 50px auto;
   background: rgba(24, 20, 20, 0.987);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
@@ -155,23 +155,23 @@ body {
   margin-bottom: 1rem;
 }
 
-.result-table-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
 .result-text {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: #fff;
 }
 
+.result-table-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
 .result-table th h3 {
   font-weight: bold;
   font-size: 1rem;
   text-align: left;
-  color: #A748F5;
+  color: #a748f5;
 }
 
 .result-table td {
@@ -188,7 +188,7 @@ body {
   width: 80%;
   margin: 0 auto;
   display: table;
-  padding: 0 0 8em 0;
+  margin-bottom: 42px;
 }
 
 .result-table td,

@@ -117,7 +117,7 @@
     <!-- Result -->
     {% if result %}
     <div class="result">
-      <h2 class="result-title">Result</h2>
+      <h1 class="result-title">Result</h1>
 
       <!-- Prediction -->
       {% if result.prediction == 1 %}
@@ -126,63 +126,71 @@
       <p class="result-text">You don't have diabetes.</p>
       {% endif %}
 
-      <!-- Data Table -->
+      <!-- Input Data Table -->
       <table class="result-table">
+        <!-- Table Title -->
         <caption>
-          <h3 class="result-table-title">Input Diabetes Data</h3>
+          <h1 class="result-table-title">Input Diabetes Data</h1>
         </caption>
-        <tr>
-          <th>Feature</th>
-          <th>Value</th>
-        </tr>
 
-        <!-- Pregnancies -->
-        <tr>
-          <td>Pregnancies</td>
-          <td>{{ result.data.pregnancies }}</td>
-        </tr>
+        <!-- Table Header -->
+        <thead>
+          <tr>
+            <th><h3>Feature</h3></th>
+            <th><h3>Value</h3></th>
+          </tr>
+        </thead>
 
-        <!-- Glucose -->
-        <tr>
-          <td>Glucose</td>
-          <td>{{ result.data.glucose }}</td>
-        </tr>
+        <!-- Table Body -->
+        <tbody>
+          <!-- Pregnancies -->
+          <tr>
+            <td>Pregnancies</td>
+            <td>{{ result.data.pregnancies }}</td>
+          </tr>
 
-        <!-- Blood Pressure -->
-        <tr>
-          <td>Blood Pressure</td>
-          <td>{{ result.data["blood-pressure"] }}</td>
-        </tr>
+          <!-- Glucose -->
+          <tr>
+            <td>Glucose</td>
+            <td>{{ result.data.glucose }}</td>
+          </tr>
 
-        <!-- Skin Thickness -->
-        <tr>
-          <td>Skin Thickness</td>
-          <td>{{ result.data["skin-thickness"] }}</td>
-        </tr>
+          <!-- Blood Pressure -->
+          <tr>
+            <td>Blood Pressure</td>
+            <td>{{ result.data["blood-pressure"] }}</td>
+          </tr>
 
-        <!-- Insulin -->
-        <tr>
-          <td>Insulin</td>
-          <td>{{ result.data.insulin }}</td>
-        </tr>
+          <!-- Skin Thickness -->
+          <tr>
+            <td>Skin Thickness</td>
+            <td>{{ result.data["skin-thickness"] }}</td>
+          </tr>
 
-        <!-- BMI -->
-        <tr>
-          <td>BMI</td>
-          <td>{{ result.data.bmi }}</td>
-        </tr>
+          <!-- Insulin -->
+          <tr>
+            <td>Insulin</td>
+            <td>{{ result.data.insulin }}</td>
+          </tr>
 
-        <!-- Diabetes Pedigree Function -->
-        <tr>
-          <td>Diabetes Pedigree Function</td>
-          <td>{{ result.data["diabetes-pedigree-function"] }}</td>
-        </tr>
+          <!-- BMI -->
+          <tr>
+            <td>BMI</td>
+            <td>{{ result.data.bmi }}</td>
+          </tr>
 
-        <!-- Age -->
-        <tr>
-          <td>Age</td>
-          <td>{{ result.data.age }}</td>
-        </tr>
+          <!-- Diabetes Pedigree Function -->
+          <tr>
+            <td>Diabetes Pedigree Function</td>
+            <td>{{ result.data["diabetes-pedigree-function"] }}</td>
+          </tr>
+
+          <!-- Age -->
+          <tr>
+            <td>Age</td>
+            <td>{{ result.data.age }}</td>
+          </tr>
+        </tbody>
       </table>
     </div>
     {% endif %}

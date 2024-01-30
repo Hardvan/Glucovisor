@@ -8,7 +8,6 @@ warnings.filterwarnings("ignore", category=InconsistentVersionWarning)
 warnings.filterwarnings("ignore", category=UserWarning)
 
 
-data_cache = {}
 scaler = joblib.load("./static/model/diabetes-prediction-scaler.joblib")
 model = joblib.load("./static/model/diabetes-prediction-model.joblib")
 
@@ -35,10 +34,6 @@ def getPrediction(data):
     # Get the values in a list
     input_data = tuple([data[x] for x in data])
 
-    # Check if the data is in the cache
-    if input_data in data_cache:
-        return data_cache[input_data]
-
     # convert to numpy array & reshape
     input_data_reshaped = np.asarray(input_data).reshape(1, -1)
 
@@ -49,9 +44,6 @@ def getPrediction(data):
     # Get prediction from model
     prediction = model.predict(std_data)
     print(f"\033[94mPredction\033[0m: {prediction}")  # For debugging
-
-    # Add to cache
-    data_cache[input_data] = prediction[0]
 
     return prediction[0]
 

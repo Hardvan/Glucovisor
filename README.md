@@ -6,6 +6,10 @@
 
 Glucovisor is a Flask web application designed for predicting diabetes based on user-provided health data. It utilizes a SVM machine learning model to make predictions and provides users with an interactive interface for obtaining predictions and exploring the results.
 
+## Dataset Link
+
+The dataset used for training the machine learning model can be found [here](https://www.kaggle.com/datasets/mathchi/diabetes-data-set).
+
 ## Tech Stack
 
 - **Flask**: A lightweight web framework for building web applications in Python.
